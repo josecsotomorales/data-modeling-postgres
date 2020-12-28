@@ -112,9 +112,8 @@ artist_table_insert = ("""
     on conflict (artist_id) do nothing
 """)
 
-
 time_table_insert = ("""
-    insert into time (
+    insert into d_time (
         start_time,
         hour,
         day,
@@ -129,9 +128,10 @@ time_table_insert = ("""
 # FIND SONGS
 
 song_select = ("""
-    select s.song_id, s.artist_id
-    from songs as s
-    join artists as a
+    select 
+        s.song_id, s.artist_id
+    from d_songs as s
+    join d_artists as a
     on s.artist_id = a.artist_id
     where s.title = (%s)
     and a.name = (%s)
@@ -140,5 +140,6 @@ song_select = ("""
 
 # QUERY LISTS
 
-create_table_queries = [songplay_table_create, user_table_create, song_table_create, artist_table_create, time_table_create]
+create_table_queries = [songplay_table_create, user_table_create, song_table_create, artist_table_create,
+                        time_table_create]
 drop_table_queries = [songplay_table_drop, user_table_drop, song_table_drop, artist_table_drop, time_table_drop]
