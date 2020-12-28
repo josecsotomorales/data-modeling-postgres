@@ -11,6 +11,11 @@ docker-compose up
 ```
 python3 ./create_tables.py
 ```
+- Drops (if exists) and Creates the sparkify database.
+- Establishes connection with the sparkify database and gets cursor to it.
+- Drops all the tables.
+- Creates all tables needed.
+- Finally, closes the connection. 
 
 2 - Run etl script:
 ```
