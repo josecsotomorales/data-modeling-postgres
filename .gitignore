@@ -101,6 +101,7 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # Default ignored files
+.idea
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
