@@ -11,8 +11,8 @@ time_table_drop = "drop table if exists d_time"
 songplay_table_create = (""" 
     create table if not exists f_songplays(
         songplay_id serial primary key,
-        start_time bigint,
-        user_id int,
+        start_time timestamp not null,
+        user_id int not null,
         level varchar,
         song_id varchar,
         artist_id varchar,
